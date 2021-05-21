@@ -87,6 +87,7 @@ struct DataInfoUtility {
             case .success(let response):
                 if let standing = response.standings?.first {
                     completion(.success(standing.table))
+                    teamStandingTable = standing.table
                 } else {
                     completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Not found"])))
                 }

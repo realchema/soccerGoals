@@ -29,6 +29,22 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    @IBSegueAction func showStanding(_ coder: NSCoder, sender: Any?) -> StandingsViewController? {
+        if let cell = sender as? UITableViewCell, let indexPath = leaguesTableView.indexPath(for: cell) {
+            let leagueId = leagues[indexPath.row].id
+            let leagueName = leagues[indexPath.row].name
+            let leagueCrestURL = leagues[indexPath.row].crestURL
+            return StandingsViewController(coder: coder, leagueId: leagueId, leagueName: leagueName, leagueCrestURL: leagueCrestURL)
+        }else{
+            return StandingsViewController(coder: coder, leagueId: nil, leagueName: nil, leagueCrestURL: nil)
+        }
+       
+    }
+    
+    @IBAction func unwindToLeaguesTableView(segue: UIStoryboardSegue) {
+       
+    }
+    
 
     // MARK: - Table view data source
 
@@ -42,7 +58,6 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
                switch tableView {
                    case leaguesTableView:
                     numberOfRow = leagues.count
-                    
                    default:
                        print("something is wrong")
                    }
@@ -51,22 +66,22 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-                switch tableView {
-                    case leaguesTableView:
-                       let cell = tableView.dequeueReusableCell(withIdentifier: "leaguesCell", for: indexPath) as! LeaguesTableViewCell
-                        let league = leagues[indexPath.row]
-                        if callStatus{
-                            cell.updateUI(with: league, index: indexPath.row)
-                        }
-                        else {
-                            cell.updateUI(with: errorStatus)
-                        }
-                        cell.showsReorderControl = true
-                        return cell
-                default:
-                    print("Something is Wrong")
+        switch tableView {
+            case leaguesTableView:
+               let cell = tableView.dequeueReusableCell(withIdentifier: "leaguesCell", for: indexPath) as! LeaguesTableViewCell
+                let league = leagues[indexPath.row]
+                if callStatus{
+                    cell.updateUI(with: league, index: indexPath.row)
                 }
+                else {
+                    cell.updateUI(with: errorStatus)
+                }
+                cell.showsReorderControl = true
                 return cell
+        default:
+            print("Something is Wrong")
+        }
+        return cell
     }
     
     

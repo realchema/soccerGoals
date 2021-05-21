@@ -43,10 +43,6 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 switch result {
                 case .success(let data):
                     //print(data)
-                    //print("Helooooo \(matches)")
-                    for element in latestMatches {
-                        print(element.awayTeam.clubLogoUrl)
-                    }
                     
                     self.callStatus = true
                     self.matchTableView.reloadData()
@@ -85,6 +81,9 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //            }
 //        }
 //    }
+        
+                
+            
     
     }
     

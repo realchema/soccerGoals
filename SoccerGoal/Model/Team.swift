@@ -87,6 +87,8 @@ struct TeamStandingTable: Identifiable, Decodable {
     
 }
 
+var teamStandingTable = [TeamStandingTable]()
+
 //extension Standing {
 //
 //    static var dummyStandings: Standing {
