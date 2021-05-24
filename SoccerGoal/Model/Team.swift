@@ -88,6 +88,14 @@ struct TeamStandingTable: Identifiable, Decodable {
     
 }
 
+struct FavoriteTeam: Equatable {
+    var id: Int
+    var name: String
+    var image: Data?
+}
+
+var listOfFavorites = [FavoriteTeam]()
+
 var teamStandingTable = [TeamStandingTable]()
 
 //extension Standing {

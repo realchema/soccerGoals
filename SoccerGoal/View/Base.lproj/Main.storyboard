@@ -21,13 +21,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4yS-lM-0TD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="449"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="486.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XGk-Dd-hxT">
-                                                <rect key="frame" x="8" y="8" width="398" height="224.5"/>
+                                                <rect key="frame" x="8" y="8" width="398" height="262"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccerGoalsLogo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jYB-8V-lK6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="149.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="175"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="20"/>
@@ -36,7 +36,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jOi-bV-FFE">
-                                                        <rect key="frame" x="0.0" y="194.5" width="398" height="30"/>
+                                                        <rect key="frame" x="0.0" y="232" width="398" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4y-md-HO8">
                                                                 <rect key="frame" x="15" y="0.0" width="153.5" height="30"/>
@@ -75,13 +75,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-5s-jZh">
-                                                <rect key="frame" x="8" y="232.5" width="398" height="208.5"/>
+                                                <rect key="frame" x="8" y="270" width="398" height="208.5"/>
                                             </stackView>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFv-6H-en4">
-                                        <rect key="frame" x="0.0" y="449" width="414" height="320"/>
+                                        <rect key="frame" x="0.0" y="486.5" width="414" height="282.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="569" id="Git-dc-GeR"/>
                                             <constraint firstAttribute="width" constant="412" id="hIU-Ko-HV1"/>
@@ -203,7 +203,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mgA-U0-itB" secondAttribute="trailing" id="NeD-u5-Yez"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Matches" id="dtZ-bf-Tca"/>
+                    <tabBarItem key="tabBarItem" title="Matches" selectedImage="sportscourt.fill" catalog="system" id="dtZ-bf-Tca"/>
                     <connections>
                         <outlet property="matchTableView" destination="vFv-6H-en4" id="t5t-jE-Tiy"/>
                     </connections>
@@ -229,6 +229,10 @@
                                         <inset key="contentEdgeInsets" minX="-45" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                                         <state key="normal" title="Button" image="star" catalog="system"/>
+                                        <state key="selected" image="star.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="homeFavoriteTeamPressed:" destination="yeb-Ha-lqS" eventType="touchUpInside" id="oih-sK-19Y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXT-RC-EbV">
                                         <rect key="frame" x="191" y="0.0" width="183" height="22"/>
@@ -236,6 +240,9 @@
                                         <inset key="contentEdgeInsets" minX="125" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                                         <state key="normal" title="Button" image="star" catalog="system"/>
+                                        <connections>
+                                            <action selector="awayFavoriteTeamPressed:" destination="yeb-Ha-lqS" eventType="touchUpInside" id="Dy0-vT-Mjr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -409,7 +416,13 @@
                             <constraint firstItem="saV-5M-Ey3" firstAttribute="bottom" secondItem="AOD-Ft-cQH" secondAttribute="bottom" constant="370" id="y0Y-nK-cF7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uWv-2N-qr8"/>
+                    <navigationItem key="navigationItem" id="uWv-2N-qr8">
+                        <barButtonItem key="leftBarButtonItem" title="Back" image="arrow.backward" catalog="system" id="S3A-Qh-bjh">
+                            <connections>
+                                <segue destination="V6p-Rn-PDm" kind="unwind" unwindAction="unwindToMatchViewWithSegue:" id="jdM-pw-Xej"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="awayFavoriteTeamButton" destination="DXT-RC-EbV" id="83C-Zy-0qM"/>
                         <outlet property="awayTeamLogoImageView" destination="ijN-bL-xS3" id="ftf-3Z-scl"/>
@@ -425,6 +438,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLP-f9-Lsd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="V6p-Rn-PDm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2894.202898550725" y="116.51785714285714"/>
         </scene>
@@ -441,11 +455,12 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="LaI-lc-ic6"/>
                         <segue destination="BuX-kh-rFc" kind="relationship" relationship="viewControllers" id="j2e-dl-tGx"/>
+                        <segue destination="CV3-tf-xLC" kind="relationship" relationship="viewControllers" id="AUz-Oa-XcS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZe-hX-aSm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
+            <point key="canvasLocation" x="-229" y="117"/>
         </scene>
         <!--Leagues-->
         <scene sceneID="jqw-JY-x1m">
@@ -548,14 +563,14 @@
                             <constraint firstItem="Jqi-ls-xq6" firstAttribute="trailing" secondItem="0sQ-Ot-rdg" secondAttribute="trailing" id="zDO-1l-emE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Leagues" id="Auo-Fx-XKJ"/>
+                    <tabBarItem key="tabBarItem" title="Leagues" selectedImage="crown.fill" catalog="system" id="Auo-Fx-XKJ"/>
                     <connections>
                         <outlet property="leaguesTableView" destination="PqY-DH-fYC" id="Wbi-Q3-gtg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osf-Mh-HBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="845"/>
+            <point key="canvasLocation" x="1042" y="822"/>
         </scene>
         <!--Standings View Controller-->
         <scene sceneID="YaC-di-abC">
@@ -770,7 +785,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gis-4x-er3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="OMV-by-z62" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="844"/>
+            <point key="canvasLocation" x="2822" y="822"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pen-Ea-Ctg">
@@ -789,7 +804,115 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdw-uc-gdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="844"/>
+            <point key="canvasLocation" x="1919" y="822"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="z5C-jc-sMM">
+            <objects>
+                <viewController id="VbK-9C-AhB" customClass="FavoritesViewController" customModule="SoccerGoal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9sW-EG-GbZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aSt-Fp-8Rc">
+                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leaguesLogo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Vbb-bV-R7g">
+                                        <rect key="frame" x="0.0" y="8" width="374" height="103.5"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="8" right="8"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="pPz-sP-hWQ">
+                                        <rect key="frame" x="0.0" y="111.5" width="374" height="605.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteCell" rowHeight="85" id="TbX-P9-shH" customClass="FavoritesTableViewCell" customModule="SoccerGoal" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="49.5" width="334" height="85"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TbX-P9-shH" id="sYP-QD-GBl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="85"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d6b-iI-ODJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="85"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9h1-kF-O0q">
+                                                                    <rect key="frame" x="8" y="8" width="74" height="69"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="74" id="5CZ-ea-tWf"/>
+                                                                        <constraint firstAttribute="height" constant="69" id="GCr-gt-IQR"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ena-HF-u5H">
+                                                                    <rect key="frame" x="90" y="8" width="236" height="69"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="69" id="W8l-yS-djN"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.84545367959999995" green="0.8983655572" blue="0.81333845849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstItem="9h1-kF-O0q" firstAttribute="leading" secondItem="d6b-iI-ODJ" secondAttribute="leading" constant="8" id="Fjp-Bk-DxW"/>
+                                                                <constraint firstItem="Ena-HF-u5H" firstAttribute="leading" secondItem="9h1-kF-O0q" secondAttribute="trailing" constant="8" symbolic="YES" id="RcX-c7-dCI"/>
+                                                                <constraint firstItem="9h1-kF-O0q" firstAttribute="top" secondItem="d6b-iI-ODJ" secondAttribute="top" constant="8" id="VpB-kR-ymX"/>
+                                                                <constraint firstAttribute="bottom" secondItem="9h1-kF-O0q" secondAttribute="bottom" constant="8" id="djP-Cr-edE"/>
+                                                            </constraints>
+                                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="20"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="d6b-iI-ODJ" firstAttribute="top" secondItem="sYP-QD-GBl" secondAttribute="top" id="3kZ-hv-PPR"/>
+                                                        <constraint firstAttribute="width" secondItem="9h1-kF-O0q" secondAttribute="width" multiplier="4.5" id="7NY-6c-8Uw"/>
+                                                        <constraint firstAttribute="bottom" secondItem="d6b-iI-ODJ" secondAttribute="bottom" id="WlA-F0-hKQ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="d6b-iI-ODJ" secondAttribute="trailing" id="Wrp-8Z-UHo"/>
+                                                        <constraint firstItem="d6b-iI-ODJ" firstAttribute="leading" secondItem="sYP-QD-GBl" secondAttribute="leading" id="YCL-if-ELN"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="favoriteTeamLogoImageView" destination="9h1-kF-O0q" id="ncY-wt-oeU"/>
+                                                    <outlet property="favoriteTeamNameLabel" destination="Ena-HF-u5H" id="cNH-VT-4Cw"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="Vbb-bV-R7g" secondAttribute="height" multiplier="7" id="Lhe-0o-Cnk"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lZd-ID-53X"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lZd-ID-53X" firstAttribute="trailing" secondItem="aSt-Fp-8Rc" secondAttribute="trailing" constant="20" id="LbH-t2-KYp"/>
+                            <constraint firstItem="aSt-Fp-8Rc" firstAttribute="leading" secondItem="lZd-ID-53X" secondAttribute="leading" constant="20" id="Mtr-Lr-6Sm"/>
+                            <constraint firstItem="aSt-Fp-8Rc" firstAttribute="bottom" secondItem="lZd-ID-53X" secondAttribute="bottom" id="fCz-P0-724"/>
+                            <constraint firstItem="aSt-Fp-8Rc" firstAttribute="top" secondItem="lZd-ID-53X" secondAttribute="top" id="vOt-5s-IhU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4ou-60-Tgw"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="pPz-sP-hWQ" id="VUt-3Y-NPc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LN2-D1-11a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1985.5072463768117" y="-558.48214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dch-NI-VHS">
@@ -810,12 +933,34 @@
             </objects>
             <point key="canvasLocation" x="1985.5072463768117" y="116.51785714285714"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="sp1-rf-dsU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CV3-tf-xLC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" selectedImage="star.fill" id="ZZR-kv-nSs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6cx-c1-ZTI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VbK-9C-AhB" kind="relationship" relationship="rootViewController" id="CbD-ht-c1x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bod-W5-PAq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="-558"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="leaguesLogo.jpg" width="768.75" height="144.75"/>
         <image name="soccerGoalsLogo.jpg" width="746.25" height="131.25"/>
+        <image name="sportscourt.fill" catalog="system" width="128" height="84"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

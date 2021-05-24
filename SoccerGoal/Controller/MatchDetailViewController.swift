@@ -53,8 +53,6 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 DispatchQueue.main.sync {
                     switch result {
                     case .success(let data):
-                        print(data)
-                        
                         matchDetails = [data]
                         title = "\(matchDetails[0].homeTeam.name) vs \(matchDetails[0].awayTeam.name)"
                         homeTeamLogoImageView.image = homeTeamLogo?.image
@@ -67,9 +65,6 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
                         if let scoreAway = matchDetails[0].score?.fullTime?.awayTeam{
                             scoreLabel.text! += String(scoreAway)
                         }
-//                        if let score = self.matchDetails[0].score {
-//                            self.scoreLabel.text = "\(scoreHome) - \(scoreAway)"
-//                        }
                         matchTimeLabel.text = DataInfoUtility.dateFormatterHours.string(from: matchDetails[0].utcDate)
                         stadiumNameLabel.text = "🏟 \(matchDetails[0].venue)"
                         matchDateLabel.text = DataInfoUtility.dateFormatterDayOfTheWeek.string(from: matchDetails[0].utcDate)
@@ -89,6 +84,51 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    @IBAction func homeFavoriteTeamPressed(_ sender: UIButton) {
+        if homeFavoriteTeamButton.currentImage == UIImage(systemName: "star"){
+            let favorite = FavoriteTeam(id: matchDetails[0].homeTeam.id, name: matchDetails[0].homeTeam.name, image: homeTeamLogo?.image?.data)
+            listOfFavorites.append(favorite)
+            //Favorite.saveFavorites(favorites)
+            homeFavoriteTeamButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+
+        }else if homeFavoriteTeamButton.currentImage == UIImage(systemName: "star.fill") {
+            for element in listOfFavorites {
+                if element.id == matchDetails[0].homeTeam.id{
+                    if let index = listOfFavorites.firstIndex(of: element) {
+                        listOfFavorites.remove(at: index)
+                        //Favorite.saveFavorites(favorites)
+                        homeFavoriteTeamButton.setImage(UIImage(systemName: "star"), for: .normal)
+                    }
+                }
+            }
+        }
+        print(listOfFavorites.description)
+    
+    }
+    
+    @IBAction func awayFavoriteTeamPressed(_ sender: UIButton) {
+        if awayFavoriteTeamButton.currentImage == UIImage(systemName: "star"){
+            let favorite = FavoriteTeam(id: matchDetails[0].awayTeam.id, name: matchDetails[0].awayTeam.name, image: awayTeamLogo?.image?.data)
+            listOfFavorites.append(favorite)
+            //Favorite.saveFavorites(favorites)
+            awayFavoriteTeamButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+
+        }else if awayFavoriteTeamButton.currentImage == UIImage(systemName: "star.fill") {
+            for element in listOfFavorites {
+                if element.id == matchDetails[0].awayTeam.id{
+                    if let index = listOfFavorites.firstIndex(of: element) {
+                        listOfFavorites.remove(at: index)
+                        //Favorite.saveFavorites(favorites)
+                        awayFavoriteTeamButton.setImage(UIImage(systemName: "star"), for: .normal)
+                    }
+                }
+            }
+        }
+        print(listOfFavorites.description)
+    }
+    
+    
+    
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -99,7 +139,7 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
         var numberOfRow = 1
                switch tableView {
                    case matchStatsTableView:
-                    print("heloo")
+                    print("")
                     //guard let goals = matchDetails[0].goals?.count else { return 1 }
                     //guard let booking  = matchDetails[0].bookings?.count else { return 1 }
                     //guard let substitutions = matchDetails[0].substitutions?.count else { return 1 }
