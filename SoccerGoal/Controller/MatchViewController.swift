@@ -26,7 +26,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //view.layer.contents = #imageLiteral(resourceName: "soccerBackground.jpg").cgImage
         // Do any additional setup after loading the view.
         
-//        dataInfoUtility.fetchMatchDetail(matchId: 303939) { (result) in
+//        dataInfoUtility.fetchMatchDetail(matchId: 308700) { (result) in
 //            DispatchQueue.main.sync {
 //                switch result {
 //                case .success(let data):
@@ -42,7 +42,8 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             DispatchQueue.main.sync {
                 switch result {
                 case .success(let data):
-                    //print(data)
+                  //  print(data)
+                    
                     
                     self.callStatus = true
                     self.matchTableView.reloadData()
@@ -54,37 +55,25 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
         }
-        
-//        dataInfoUtility.fetchTeamDetail(teamId: 92) { (result) in
-//            DispatchQueue.main.sync {
-//                switch result {
-//                case .success(let data):
-//                    print(data)
-//
-//                case .failure(let error):
-//                    print(error)
-////                    self.callStatus = false
-//                }
-//            }
-//        }
-        
-//        dataInfoUtility.fetchUpcomingMatches(competitionId: 2021) { (result) in
-//            DispatchQueue.main.sync {
-//                switch result {
-//                case .success(let data):
-//                    print(data)
-//                    print("Helooooo \(matches)")
-//                case .failure(let error):
-//                    print(error)
-////                    self.callStatus = false
-//                }
-//            }
-//        }
-//    }
-        
-                
-            
     
+    }
+    
+    @IBSegueAction func showMatchDetails(_ coder: NSCoder, sender: Any?) -> MatchDetailViewController? {
+        if let cell = sender as? UITableViewCell, let indexPath = matchTableView.indexPath(for: cell) {
+            let matchId = latestMatches[indexPath.row].id
+            let homeTeamLogo =  latestMatches[indexPath.row].homeTeam.image
+            let awayTeamLogo =  latestMatches[indexPath.row].awayTeam.image
+            return MatchDetailViewController(coder: coder, matchId: matchId, homeTeamLogo: homeTeamLogo, awayTeamLogo: awayTeamLogo)
+        }else{
+            return MatchDetailViewController(coder: coder, matchId: nil, homeTeamLogo: nil, awayTeamLogo: nil)
+        }
+       
+    }
+    
+    
+    
+    @IBAction func unwindToMatchView(segue: UIStoryboardSegue) {
+       
     }
     
     // MARK: - Table view data source

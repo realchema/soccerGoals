@@ -48,6 +48,7 @@ class StandingsViewController: UIViewController, UITableViewDelegate, UITableVie
                         //print(data)
                         self.standings = data
                         print(self.standings.description)
+                        self.title = self.leagueName
                         self.standingTableView.reloadData()
                         self.callStatus = true
                     case .failure(let error):
@@ -104,3 +105,4 @@ class StandingsViewController: UIViewController, UITableViewDelegate, UITableVie
         standingTableView.reloadData()
     }
 }
+

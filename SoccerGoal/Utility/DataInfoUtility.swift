@@ -44,6 +44,12 @@ struct DataInfoUtility {
         return formatter
     }()
     
+    static let dateFormatterDayOfTheWeek: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE, MMM d"
+        return formatter
+    }()
+    
     func fetchLatestMatches(competitionId: Int, completion: @escaping(Result<[Match], Error>) -> ()) {
         let (tenDaysAgoText, todayText) = startEndDateFilter(isUpcoming: false)
         

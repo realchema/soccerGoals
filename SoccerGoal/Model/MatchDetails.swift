@@ -115,3 +115,11 @@ struct MatchDetailSubtitution: Identifiable, Decodable, Equatable {
     }
     
 }
+
+var listOfMatchDetails = [MatchDetail]()
+
+
+
+
+
+

@@ -47,6 +47,7 @@ class MatchTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { /// execute on main thread
                     let mySVGImage: SVGKImage = SVGKImage(data: data)
                     self.homeImageView?.image = mySVGImage.uiImage
+                    latestMatches[index].homeTeam.image = self.homeImageView.image?.data
                     self.homeTeamNameLabel.text = matchInfo.homeTeam.name
                     if let homeScore = matchInfo.score.fullTime?.homeTeam {
                         self.homeScoreLabel.text = String(homeScore)
@@ -65,6 +66,7 @@ class MatchTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { /// execute on main thread
                     let mySVGImage: SVGKImage = SVGKImage(data: data)
                     self.awayImageView.image = mySVGImage.uiImage
+                    latestMatches[index].awayTeam.image = self.awayImageView.image?.data
                     self.awayTeamNameLabel.text = matchInfo.awayTeam.name
                     if let awayScore = matchInfo.score.fullTime?.awayTeam {
                         self.awayScoreLabel.text = String(awayScore)

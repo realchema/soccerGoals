@@ -34,6 +34,7 @@ struct Team: Identifiable, Decodable {
     var clubLogoUrl: String? {
         return "https://crests.football-data.org/\(id).svg"
     }
+    var image: Data?
     
         
     
@@ -119,3 +120,5 @@ extension Data {
         }
     }
 }
+
+
