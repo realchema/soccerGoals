@@ -95,8 +95,8 @@ struct FavoriteTeam: Equatable {
 }
 
 var listOfFavorites = [FavoriteTeam]()
-
 var teamStandingTable = [TeamStandingTable]()
+var listOfTeams = [Team]()
 
 //extension Standing {
 //

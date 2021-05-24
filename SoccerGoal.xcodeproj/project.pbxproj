@@ -18,6 +18,8 @@
 		6761AF15265855CA009BFF89 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761AF14265855CA009BFF89 /* MatchDetailViewController.swift */; };
 		676B9E1F265AFB640024FB9D /* MatchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B9E1E265AFB640024FB9D /* MatchDetailTableViewCell.swift */; };
 		676CA77E2652E32A00AEA3DA /* soccerBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 676CA77D2652E32A00AEA3DA /* soccerBackground.jpg */; };
+		676FA5AF265BDE7300E24066 /* realMadridLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 676FA5AE265BDE7300E24066 /* realMadridLogo.png */; };
+		676FA5B1265BE44C00E24066 /* FavoriteDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676FA5B0265BE44C00E24066 /* FavoriteDetailTableViewController.swift */; };
 		679A950E26573CEC0061F253 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A950D26573CEC0061F253 /* StandingsViewController.swift */; };
 		679A951026573D0B0061F253 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A950F26573D0B0061F253 /* StandingsTableViewCell.swift */; };
 		67B340EE265493AF00BFDBC7 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B340ED265493AF00BFDBC7 /* MatchTableViewCell.swift */; };
@@ -47,6 +49,8 @@
 		6761AF14265855CA009BFF89 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		676B9E1E265AFB640024FB9D /* MatchDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailTableViewCell.swift; sourceTree = "<group>"; };
 		676CA77D2652E32A00AEA3DA /* soccerBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soccerBackground.jpg; sourceTree = "<group>"; };
+		676FA5AE265BDE7300E24066 /* realMadridLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = realMadridLogo.png; sourceTree = "<group>"; };
+		676FA5B0265BE44C00E24066 /* FavoriteDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailTableViewController.swift; sourceTree = "<group>"; };
 		679A950D26573CEC0061F253 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		679A950F26573D0B0061F253 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
 		67B340ED265493AF00BFDBC7 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				676B9E1E265AFB640024FB9D /* MatchDetailTableViewCell.swift */,
 				671D1CBE265B50EC009ADA55 /* FavoritesViewController.swift */,
 				671D1CC0265B5104009ADA55 /* FavoritesTableViewCell.swift */,
+				676FA5B0265BE44C00E24066 /* FavoriteDetailTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 		67F7C220264D6EDB00073759 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				676FA5AE265BDE7300E24066 /* realMadridLogo.png */,
 				672B60BF26569BB300B6F479 /* leaguesLogo.jpg */,
 				672B60BD2655D6C400B6F479 /* soccerGoalsLogo.jpg */,
 				676CA77D2652E32A00AEA3DA /* soccerBackground.jpg */,
@@ -249,6 +255,7 @@
 			files = (
 				67F7C216264D6DC000073759 /* LaunchScreen.storyboard in Resources */,
 				672B60BE2655D6C400B6F479 /* soccerGoalsLogo.jpg in Resources */,
+				676FA5AF265BDE7300E24066 /* realMadridLogo.png in Resources */,
 				67F7C213264D6DC000073759 /* Assets.xcassets in Resources */,
 				67F7C211264D6DBF00073759 /* Main.storyboard in Resources */,
 				676CA77E2652E32A00AEA3DA /* soccerBackground.jpg in Resources */,
@@ -309,6 +316,7 @@
 				67F7C227264D711400073759 /* Team.swift in Sources */,
 				672B60BA2655476300B6F479 /* Competition.swift in Sources */,
 				67F7C20E264D6DBF00073759 /* MatchViewController.swift in Sources */,
+				676FA5B1265BE44C00E24066 /* FavoriteDetailTableViewController.swift in Sources */,
 				672B60BC265547AB00B6F479 /* Referee.swift in Sources */,
 				679A950E26573CEC0061F253 /* StandingsViewController.swift in Sources */,
 				67F7C229264D717500073759 /* MatchDetails.swift in Sources */,

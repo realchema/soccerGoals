@@ -21,28 +21,14 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         matchTableView.delegate = self
         matchTableView.dataSource = self
-//        matchTableView.rowHeight = UITableView.automaticDimension
-//        matchTableView.estimatedRowHeight = 44.0
-        //view.layer.contents = #imageLiteral(resourceName: "soccerBackground.jpg").cgImage
-        // Do any additional setup after loading the view.
         
-//        dataInfoUtility.fetchMatchDetail(matchId: 308700) { (result) in
-//            DispatchQueue.main.sync {
-//                switch result {
-//                case .success(let data):
-//                    print(data)
-//                case .failure(let error):
-//                    print(error)
-////                    self.callStatus = false
-//                }
-//            }
-//        }
+
         
         dataInfoUtility.fetchLatestMatches(competitionId: 2014) { (result) in
             DispatchQueue.main.sync {
                 switch result {
                 case .success(let data):
-                  //  print(data)
+                    //print(data)
                     
                     
                     self.callStatus = true

@@ -18,13 +18,28 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         favoritesTableView.delegate = self
         favoritesTableView.dataSource = self
-        
         if listOfFavorites.isEmpty {
             callStatus = false
         }
         else {
             callStatus = true
         }
+    }
+    
+    @IBSegueAction func showFavoriteDetails(_ coder: NSCoder, sender: Any?) -> FavoriteDetailTableViewController {
+        if let cell = sender as? UITableViewCell, let indexPath = favoritesTableView.indexPath(for: cell) {
+            let favoriteId = listOfFavorites[indexPath.row].id
+            let favoriteImage = listOfFavorites[indexPath.row].image?.image
+            let favoriteName = listOfFavorites[indexPath.row].name
+            return FavoriteDetailTableViewController(coder: coder, favoriteId: favoriteId, favoriteImage: favoriteImage, favoriteName: favoriteName )!
+        }else{
+            return FavoriteDetailTableViewController(coder: coder, favoriteId: nil, favoriteImage: nil,favoriteName: nil)!
+        }
+       
+    }
+    
+    @IBAction func unwindToFavoriteTableView(segue: UIStoryboardSegue) {
+       
     }
     
     
@@ -63,6 +78,11 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             print("Something is Wrong")
         }
         return cell
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favoritesTableView.reloadData()
     }
 
 }

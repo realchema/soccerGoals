@@ -24,9 +24,9 @@ class FavoritesTableViewCell: UITableViewCell {
     }
     
     func updateUI(with favoriteInfo: FavoriteTeam, index: Int) {
-        let mySVGImage: SVGKImage = SVGKImage(data: favoriteInfo.image)
-        favoriteTeamLogoImageView.image = mySVGImage.uiImage
-        //favoriteTeamLogoImageView.image = favoriteInfo.image?.image
+//        let mySVGImage: SVGKImage = SVGKImage(data: favoriteInfo.image)
+//        favoriteTeamLogoImageView.image = mySVGImage.uiImage
+        favoriteTeamLogoImageView.image = favoriteInfo.image?.image
         favoriteTeamNameLabel.text = favoriteInfo.name
     }
     func updateUI(with error: String) {
