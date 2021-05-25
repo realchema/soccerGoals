@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import CoreData
 
 class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var callStatus: Bool = false
     var errorStatus: String = "No favorites found"
     
+    
     @IBOutlet weak var favoritesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        retrieveValues()
         favoritesTableView.delegate = self
         favoritesTableView.dataSource = self
         if listOfFavorites.isEmpty {
@@ -86,3 +89,24 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
 }
+
+extension FavoritesViewController {
+    func retrieveValues() {
+        listOfFavorites.removeAll()
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<FavsTeams>(entityName: "FavsTeams")
+
+            do {
+                let results = try context.fetch(fetchRequest)
+                for result in results {
+                    let favoriteTeam = FavoriteTeam(id: Int(result.id), name: result.name!, image: result.image)
+                    listOfFavorites.append(favoriteTeam)
+                }
+            } catch  {
+                print("could not retrieve")
+            }
+        }
+    }
+}
+

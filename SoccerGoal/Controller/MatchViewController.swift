@@ -9,7 +9,7 @@ import UIKit
 
 class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+    let databaseCRUD = DatabaseCRUD()
     let dataInfoUtility = DataInfoUtility()
     var callStatus: Bool = false
     var errorStatus: Error? = nil
@@ -21,7 +21,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         matchTableView.delegate = self
         matchTableView.dataSource = self
-        
+//        databaseCRUD.deleteAllObjects()
 
         
         dataInfoUtility.fetchLatestMatches(competitionId: 2014) { (result) in
@@ -49,9 +49,11 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let matchId = latestMatches[indexPath.row].id
             let homeTeamLogo =  latestMatches[indexPath.row].homeTeam.image
             let awayTeamLogo =  latestMatches[indexPath.row].awayTeam.image
-            return MatchDetailViewController(coder: coder, matchId: matchId, homeTeamLogo: homeTeamLogo, awayTeamLogo: awayTeamLogo)
+            let homeTeamId = latestMatches[indexPath.row].homeTeam.id
+            let awayTeamId = latestMatches[indexPath.row].awayTeam.id
+            return MatchDetailViewController(coder: coder, matchId: matchId, homeTeamLogo: homeTeamLogo, awayTeamLogo: awayTeamLogo, awayTeamId: awayTeamId, homeTeamId: homeTeamId)
         }else{
-            return MatchDetailViewController(coder: coder, matchId: nil, homeTeamLogo: nil, awayTeamLogo: nil)
+            return MatchDetailViewController(coder: coder, matchId: nil, homeTeamLogo: nil, awayTeamLogo: nil, awayTeamId: nil, homeTeamId: nil)
         }
        
     }

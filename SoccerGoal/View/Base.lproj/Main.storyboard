@@ -21,13 +21,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4yS-lM-0TD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="526"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="575.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XGk-Dd-hxT">
-                                                <rect key="frame" x="8" y="8" width="398" height="232.5"/>
+                                                <rect key="frame" x="8" y="8" width="398" height="282"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccerGoalsLogo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jYB-8V-lK6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="155"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="141"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="20"/>
@@ -36,7 +36,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jOi-bV-FFE">
-                                                        <rect key="frame" x="0.0" y="202.5" width="398" height="30"/>
+                                                        <rect key="frame" x="0.0" y="252" width="398" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4y-md-HO8">
                                                                 <rect key="frame" x="15" y="0.0" width="153.5" height="30"/>
@@ -71,17 +71,17 @@
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" secondItem="jYB-8V-lK6" secondAttribute="height" multiplier="1.5" id="cZ0-fw-fkY"/>
+                                                    <constraint firstAttribute="height" secondItem="jYB-8V-lK6" secondAttribute="height" multiplier="2" id="cZ0-fw-fkY"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-5s-jZh">
-                                                <rect key="frame" x="8" y="240.5" width="398" height="277.5"/>
+                                                <rect key="frame" x="8" y="290" width="398" height="277.5"/>
                                             </stackView>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFv-6H-en4">
-                                        <rect key="frame" x="0.0" y="526" width="414" height="243"/>
+                                        <rect key="frame" x="0.0" y="575.5" width="414" height="193.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="569" id="Git-dc-GeR"/>
                                             <constraint firstAttribute="width" constant="412" id="hIU-Ko-HV1"/>

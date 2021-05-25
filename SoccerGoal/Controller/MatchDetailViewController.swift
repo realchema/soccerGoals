@@ -6,21 +6,27 @@
 //
 
 import UIKit
+import CoreData
 
 class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     let dataInfoUtility = DataInfoUtility()
+    let databaseCRUD = DatabaseCRUD()
     var callStatus: Bool = false
     var errorStatus: String = "No info found"
     var matchDetails = listOfMatchDetails
     var matchId : Int?
     var homeTeamLogo : Data?
     var awayTeamLogo : Data?
+    var awayTeamId: Int?
+    var homeTeamId: Int?
     
-    init?(coder: NSCoder, matchId: Int?, homeTeamLogo : Data?, awayTeamLogo : Data?) {
+    init?(coder: NSCoder, matchId: Int?, homeTeamLogo : Data?, awayTeamLogo : Data?, awayTeamId: Int?, homeTeamId: Int?) {
         self.matchId = matchId
         self.homeTeamLogo = homeTeamLogo
         self.awayTeamLogo = awayTeamLogo
+        self.awayTeamId = awayTeamId
+        self.homeTeamId = homeTeamId
         super.init(coder: coder)
     }
     
@@ -53,7 +59,22 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 DispatchQueue.main.sync {
                     switch result {
                     case .success(let data):
+                        databaseCRUD.retrieveValues()
                         matchDetails = [data]
+                        print("holaaaaa")
+                        print(listOfFavorites.description)
+                        print(matchDetails[0].awayTeam.id)
+                        //checkIfFavorite(matchDetail: matchDetails[0])
+                        for element in listOfFavorites{
+                            if awayTeamId == element.id{
+                                print("true")
+                                awayFavoriteTeamButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+                            }
+                            if homeTeamId == element.id{
+                                homeFavoriteTeamButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+                            }
+                        }
+                        
                         title = "\(matchDetails[0].homeTeam.name) vs \(matchDetails[0].awayTeam.name)"
                         homeTeamLogoImageView.image = homeTeamLogo?.image
                         awayTeamLogoImageView.image = awayTeamLogo?.image
@@ -87,44 +108,50 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func homeFavoriteTeamPressed(_ sender: UIButton) {
         if homeFavoriteTeamButton.currentImage == UIImage(systemName: "star"){
             let favorite = FavoriteTeam(id: matchDetails[0].homeTeam.id, name: matchDetails[0].homeTeam.name, image: homeTeamLogo?.image?.data)
-            listOfFavorites.append(favorite)
+            //listOfFavorites.append(favorite)
             //Favorite.saveFavorites(favorites)
+            self.save(favorite: favorite)
             homeFavoriteTeamButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
 
         }else if homeFavoriteTeamButton.currentImage == UIImage(systemName: "star.fill") {
-            for element in listOfFavorites {
-                if element.id == matchDetails[0].homeTeam.id{
-                    if let index = listOfFavorites.firstIndex(of: element) {
-                        listOfFavorites.remove(at: index)
+            homeFavoriteTeamButton.setImage(UIImage(systemName: "star"), for: .normal)
+            self.deleteDb(value: String(matchDetails[0].homeTeam.id))
+            //for element in listOfFavorites {
+                //if element.id == matchDetails[0].homeTeam.id{
+                    //if let index = listOfFavorites.firstIndex(of: element) {
+                        //listOfFavorites.remove(at: index)
+                        
                         //Favorite.saveFavorites(favorites)
-                        homeFavoriteTeamButton.setImage(UIImage(systemName: "star"), for: .normal)
-                    }
-                }
-            }
+                        
+                    //}
+                //}
+            //}
         }
-        print(listOfFavorites.description)
-    
     }
     
     @IBAction func awayFavoriteTeamPressed(_ sender: UIButton) {
         if awayFavoriteTeamButton.currentImage == UIImage(systemName: "star"){
             let favorite = FavoriteTeam(id: matchDetails[0].awayTeam.id, name: matchDetails[0].awayTeam.name, image: awayTeamLogo?.image?.data)
-            listOfFavorites.append(favorite)
+            //listOfFavorites.append(favorite)
             //Favorite.saveFavorites(favorites)
+            self.save(favorite: favorite)
             awayFavoriteTeamButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
 
         }else if awayFavoriteTeamButton.currentImage == UIImage(systemName: "star.fill") {
-            for element in listOfFavorites {
-                if element.id == matchDetails[0].awayTeam.id{
-                    if let index = listOfFavorites.firstIndex(of: element) {
-                        listOfFavorites.remove(at: index)
-                        //Favorite.saveFavorites(favorites)
-                        awayFavoriteTeamButton.setImage(UIImage(systemName: "star"), for: .normal)
-                    }
-                }
-            }
+            self.deleteDb(value: String(matchDetails[0].awayTeam.id))
+            awayFavoriteTeamButton.setImage(UIImage(systemName: "star"), for: .normal)
+//            for element in listOfFavorites {
+//                if element.id == matchDetails[0].awayTeam.id{
+//                    if let index = listOfFavorites.firstIndex(of: element) {
+//                        listOfFavorites.remove(at: index)
+//
+//                        //Favorite.saveFavorites(favorites)
+//
+//                    }
+//                }
+//            }
         }
-        print(listOfFavorites.description)
+        //print(listOfFavorites.description)
     }
     
     
@@ -189,5 +216,74 @@ class MatchDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewWillAppear(animated)
         matchStatsTableView.reloadData()
     }
+    
+    func checkIfFavorite(matchDetail: MatchDetail){
+        databaseCRUD.retrieveValues()
+        for element in listOfFavorites {
+            if element.id == matchDetail.homeTeam.id {
+                homeFavoriteTeamButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            }
+            else if element.id == matchDetail.awayTeam.id {
+                awayFavoriteTeamButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            }
+        }
+    }
+    
+}
+
+extension MatchDetailViewController {
+    
+    func save(favorite: FavoriteTeam){
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let context  = appDelegate.persistentContainer.viewContext
+            
+            guard let entityDescription = NSEntityDescription.entity(forEntityName: "FavsTeams", in: context) else {return}
+            
+            let newValue = NSManagedObject(entity: entityDescription, insertInto: context)
+            
+            newValue.setValue(favorite.id, forKey: "id")
+            newValue.setValue(favorite.name, forKey: "name")
+            newValue.setValue(favorite.image, forKey: "image")
+            
+            do {
+                try context.save()
+                print("Saved: \(favorite.id)\(favorite.name)\(favorite.image)")
+                databaseCRUD.retrieveValues()
+            } catch  {
+                print("Saving Error")
+            }
+        }
+    }
+    
+    func deleteDb(value: String){
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let context  = appDelegate.persistentContainer.viewContext
+
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavsTeams")
+            //let result = try? context.fetch(fetchRequest)
+            
+
+            do {
+                
+                //let resultData = result as [FavoriteTeam]
+                let favorite = try context.fetch(fetchRequest)
+                for i in 0..<listOfFavorites.count {
+                    if listOfFavorites[i].id == Int(value) {
+                        context.delete(favorite[i])
+                    }
+                }
+                
+//                for element in favorite{
+//                    context.delete(element)
+//                }
+                try context.save()
+                print("Deleted: \(value)")
+                databaseCRUD.retrieveValues()
+            } catch  {
+                print("Saving Error")
+            }
+        }
+    }
+    
     
 }

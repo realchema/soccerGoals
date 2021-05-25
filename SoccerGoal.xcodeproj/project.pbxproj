@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		671D1CBF265B50EC009ADA55 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671D1CBE265B50EC009ADA55 /* FavoritesViewController.swift */; };
 		671D1CC1265B5104009ADA55 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671D1CC0265B5104009ADA55 /* FavoritesTableViewCell.swift */; };
+		6725A9AF265C06630054B5F5 /* FavoritesTeams.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6725A9AD265C06630054B5F5 /* FavoritesTeams.xcdatamodeld */; };
 		672B60BA2655476300B6F479 /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B60B92655476300B6F479 /* Competition.swift */; };
 		672B60BC265547AB00B6F479 /* Referee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B60BB265547AB00B6F479 /* Referee.swift */; };
 		672B60BE2655D6C400B6F479 /* soccerGoalsLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 672B60BD2655D6C400B6F479 /* soccerGoalsLogo.jpg */; };
@@ -23,6 +24,7 @@
 		679A950E26573CEC0061F253 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A950D26573CEC0061F253 /* StandingsViewController.swift */; };
 		679A951026573D0B0061F253 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A950F26573D0B0061F253 /* StandingsTableViewCell.swift */; };
 		67B340EE265493AF00BFDBC7 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B340ED265493AF00BFDBC7 /* MatchTableViewCell.swift */; };
+		67EC5CB9265C414500BBDCEB /* DatabaseCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC5CB8265C414500BBDCEB /* DatabaseCRUD.swift */; };
 		67F7C20A264D6DBF00073759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7C209264D6DBF00073759 /* AppDelegate.swift */; };
 		67F7C20C264D6DBF00073759 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7C20B264D6DBF00073759 /* SceneDelegate.swift */; };
 		67F7C20E264D6DBF00073759 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7C20D264D6DBF00073759 /* MatchViewController.swift */; };
@@ -40,6 +42,7 @@
 /* Begin PBXFileReference section */
 		671D1CBE265B50EC009ADA55 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		671D1CC0265B5104009ADA55 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		6725A9AE265C06630054B5F5 /* FavoritesTeams.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritesTeams.xcdatamodel; sourceTree = "<group>"; };
 		672B60B92655476300B6F479 /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
 		672B60BB265547AB00B6F479 /* Referee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Referee.swift; sourceTree = "<group>"; };
 		672B60BD2655D6C400B6F479 /* soccerGoalsLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soccerGoalsLogo.jpg; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		679A950D26573CEC0061F253 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		679A950F26573D0B0061F253 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
 		67B340ED265493AF00BFDBC7 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		67EC5CB8265C414500BBDCEB /* DatabaseCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCRUD.swift; sourceTree = "<group>"; };
 		67F7C206264D6DBF00073759 /* SoccerGoal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoccerGoal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7C209264D6DBF00073759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F7C20B264D6DBF00073759 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				67F7C22A264D71B100073759 /* Player.swift */,
 				672B60B92655476300B6F479 /* Competition.swift */,
 				672B60BB265547AB00B6F479 /* Referee.swift */,
+				6725A9AD265C06630054B5F5 /* FavoritesTeams.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				67F7C222264D6FA100073759 /* DataInfoUtility.swift */,
+				67EC5CB8265C414500BBDCEB /* DatabaseCRUD.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6725A9AF265C06630054B5F5 /* FavoritesTeams.xcdatamodeld in Sources */,
 				676B9E1F265AFB640024FB9D /* MatchDetailTableViewCell.swift in Sources */,
 				67F7C227264D711400073759 /* Team.swift in Sources */,
 				672B60BA2655476300B6F479 /* Competition.swift in Sources */,
@@ -325,6 +332,7 @@
 				67F7C20A264D6DBF00073759 /* AppDelegate.swift in Sources */,
 				671D1CBF265B50EC009ADA55 /* FavoritesViewController.swift in Sources */,
 				6761AF15265855CA009BFF89 /* MatchDetailViewController.swift in Sources */,
+				67EC5CB9265C414500BBDCEB /* DatabaseCRUD.swift in Sources */,
 				67B340EE265493AF00BFDBC7 /* MatchTableViewCell.swift in Sources */,
 				67F7C22B264D71B100073759 /* Player.swift in Sources */,
 				67F7C223264D6FA100073759 /* DataInfoUtility.swift in Sources */,
@@ -535,6 +543,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6725A9AD265C06630054B5F5 /* FavoritesTeams.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6725A9AE265C06630054B5F5 /* FavoritesTeams.xcdatamodel */,
+			);
+			currentVersion = 6725A9AE265C06630054B5F5 /* FavoritesTeams.xcdatamodel */;
+			path = FavoritesTeams.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 67F7C1FE264D6DBF00073759 /* Project object */;
 }
