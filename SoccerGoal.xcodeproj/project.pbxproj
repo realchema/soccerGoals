@@ -96,6 +96,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		67EC5CBA265C79C200BBDCEB /* Core Data  */ = {
+			isa = PBXGroup;
+			children = (
+				6725A9AD265C06630054B5F5 /* FavoritesTeams.xcdatamodeld */,
+			);
+			path = "Core Data ";
+			sourceTree = "<group>";
+		};
 		67F7C1FD264D6DBF00073759 = {
 			isa = PBXGroup;
 			children = (
@@ -130,13 +138,13 @@
 		67F7C21D264D6DDF00073759 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				67EC5CBA265C79C200BBDCEB /* Core Data  */,
 				67F7C224264D704D00073759 /* Match.swift */,
 				67F7C226264D711400073759 /* Team.swift */,
 				67F7C228264D717500073759 /* MatchDetails.swift */,
 				67F7C22A264D71B100073759 /* Player.swift */,
 				672B60B92655476300B6F479 /* Competition.swift */,
 				672B60BB265547AB00B6F479 /* Referee.swift */,
-				6725A9AD265C06630054B5F5 /* FavoritesTeams.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";

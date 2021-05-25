@@ -21,13 +21,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4yS-lM-0TD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="575.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="622.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XGk-Dd-hxT">
-                                                <rect key="frame" x="8" y="8" width="398" height="282"/>
+                                                <rect key="frame" x="8" y="8" width="398" height="329"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccerGoalsLogo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jYB-8V-lK6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="141"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="164.5"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="20"/>
@@ -36,24 +36,24 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jOi-bV-FFE">
-                                                        <rect key="frame" x="0.0" y="252" width="398" height="30"/>
+                                                        <rect key="frame" x="0.0" y="299" width="398" height="30"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4y-md-HO8">
-                                                                <rect key="frame" x="15" y="0.0" width="153.5" height="30"/>
+                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4y-md-HO8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                 <state key="normal" title="Yesterday">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdd-vD-xTR">
-                                                                <rect key="frame" x="168.5" y="0.0" width="91" height="30"/>
+                                                                <rect key="frame" x="15" y="0.0" width="398" height="30"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                                <state key="normal" title="Today">
+                                                                <state key="normal" title="Latest Matches">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdp-Cv-rRR">
-                                                                <rect key="frame" x="259.5" y="0.0" width="123.5" height="30"/>
+                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdp-Cv-rRR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                 <state key="normal" title="Tomorrow">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,13 +75,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-5s-jZh">
-                                                <rect key="frame" x="8" y="290" width="398" height="277.5"/>
+                                                <rect key="frame" x="8" y="337" width="398" height="277.5"/>
                                             </stackView>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFv-6H-en4">
-                                        <rect key="frame" x="0.0" y="575.5" width="414" height="193.5"/>
+                                        <rect key="frame" x="0.0" y="622.5" width="414" height="146.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="569" id="Git-dc-GeR"/>
                                             <constraint firstAttribute="width" constant="412" id="hIU-Ko-HV1"/>
@@ -203,7 +203,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mgA-U0-itB" secondAttribute="trailing" id="NeD-u5-Yez"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Matches" selectedImage="sportscourt.fill" catalog="system" id="dtZ-bf-Tca"/>
+                    <tabBarItem key="tabBarItem" title="Matches" image="sportscourt.fill" catalog="system" selectedImage="sportscourt.fill" id="dtZ-bf-Tca"/>
                     <connections>
                         <outlet property="matchTableView" destination="vFv-6H-en4" id="t5t-jE-Tiy"/>
                     </connections>
@@ -563,7 +563,7 @@
                             <constraint firstItem="Jqi-ls-xq6" firstAttribute="trailing" secondItem="0sQ-Ot-rdg" secondAttribute="trailing" id="zDO-1l-emE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Leagues" selectedImage="crown.fill" catalog="system" id="Auo-Fx-XKJ"/>
+                    <tabBarItem key="tabBarItem" title="Leagues" image="crown.fill" catalog="system" selectedImage="crown.fill" id="Auo-Fx-XKJ"/>
                     <connections>
                         <outlet property="leaguesTableView" destination="PqY-DH-fYC" id="Wbi-Q3-gtg"/>
                     </connections>
